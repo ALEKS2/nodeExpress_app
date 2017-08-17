@@ -1,0 +1,11 @@
+extends templates.pug
+block content
+  h1.text-center login
+  form(method="POST", action="/user/login")
+   .form-group
+    lable Username:
+    input.form-control(name="username", type="text")
+   .form-group
+    lable Password:
+    input.form-control(name="password", type="password")
+   input.btn.btn-primary(value="submit" type="submit")

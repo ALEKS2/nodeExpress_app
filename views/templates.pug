@@ -1,0 +1,46 @@
+doctype html
+html
+ head
+  title #{title}
+  link(href="/bower_components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+  link(href="/css/style.css", rel="stylesheet")
+  
+ body
+  nav.navbar.navbar-default.navbar-inverse.nav-transparent
+   .container
+    .navbar-header
+      //- div.navbar-brand
+      a.navbar-brand(href='') NodeExpressApp
+      button.navbar-toggle(type='button', data-target='#navcollapse', data-toggle='collapse')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navcollapse.navbar-collapse.collapse
+      ul.nav.navbar-nav.nav-pills
+        li
+          a(href='/') Home
+        li
+          a(href='/articles/add') Add article
+        
+      ul.nav.navbar-nav.navbar-right
+        li.pull-right
+         a(href='/user/register') Register
+        li
+         a(href='/user/login') Login
+      
+
+  .container
+   != messages('messages', locals)
+   if errors
+    each error in errors
+     div.alert.alert-danger=error.msg
+      
+    
+   block content
+   br
+   hr
+   footer
+    p Copyright &copy; 2017
+  script(src='/bower_components/jquery/dist/jquery.min.js')
+  script(src='/bower_components/bootstrap/dist/js/bootstrap.min.js')
+  script(src='/js/main.js')

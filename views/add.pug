@@ -1,0 +1,14 @@
+extends templates.pug
+block content
+  h1.text-center #{header}
+  form(method="POST", action="/articles/add")
+   .form-group
+    lable Title:
+    input.form-control(name="title", type="text")
+   .form-group
+    lable author:
+    input.form-control(name="author", type="text")
+   .form-group
+    lable Body:
+    input.form-control(name="body", type="text")
+   input.btn.btn-primary(value="submit" type="submit")

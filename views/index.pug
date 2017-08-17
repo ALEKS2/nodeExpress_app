@@ -1,0 +1,13 @@
+extends templates
+block content
+  h1 #{header}
+  //- ul.list-group
+  //-  each article in articles
+  //-   li.list-group-item= article.title
+
+  ul.list-group
+   each article in articles
+    li.list-group-item
+     a(href='/articles/'+article.id)= article.title
+     
+   
