@@ -1,8 +1,10 @@
 extends templates
 block content
   h1=article.title
-  small.text-info by #{article.author}
+  small.text-info by #{author}
   p=article.body
   hr
-  a.btn.btn-info(href="/articles/edit/"+article.id) Edit
-  a.btn.btn-danger#delete_article(href="#",data-id=article.id) DELETE
+  if user
+   if user.id==article.author
+    a.btn.btn-info(href="/articles/edit/"+article.id) Edit
+    a.btn.btn-danger#delete_article(href="#",data-id=article.id) DELETE

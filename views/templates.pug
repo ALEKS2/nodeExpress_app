@@ -19,14 +19,19 @@ html
       ul.nav.navbar-nav.nav-pills
         li
           a(href='/') Home
-        li
+        if user
+         li
           a(href='/articles/add') Add article
         
       ul.nav.navbar-nav.navbar-right
-        li.pull-right
-         a(href='/user/register') Register
-        li
-         a(href='/user/login') Login
+        if user
+         li 
+          a(href='/user/logout') Logout
+        else
+         li.pull-right
+          a(href='/user/register') Register
+         li
+          a(href='/user/login') Login
       
 
   .container
